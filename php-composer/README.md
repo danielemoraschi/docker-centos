@@ -8,8 +8,8 @@ A Docker image for the Composer command line interface, based on `dmoraschi/cent
 
 ## How to Build
 
-    git clone https://github.com/dmoraschi/docker-phpcomposer.git
-    cd docker-phpcomposer
+    git clone https://github.com/dmoraschi/docker-centos.git
+    cd php-composer
     docker build -t dmoraschi/centos-phpcomposer .
 
 ## How to Run (required a php fpm image to link)

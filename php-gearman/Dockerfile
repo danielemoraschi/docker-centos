@@ -11,5 +11,5 @@ RUN yum -y install
 RUN pecl install gearman
 RUN echo extension=gearman.so > /etc/php.d/gearman.ini
 
-
+WORKDIR /data
 ENTRYPOINT ["/opt/bin/phpfpm-start.sh"]

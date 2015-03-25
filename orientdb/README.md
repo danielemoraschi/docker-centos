@@ -6,8 +6,8 @@
 
 ## How to Build
 
-    git clone https://github.com/dmoraschi/docker-orientdb.git
-    cd docker-orientdb
+    git clone https://github.com/dmoraschi/docker-centos.git
+    cd orientdb
     docker build -t dmoraschi/centos-orientdb .
 
 ## How to Run

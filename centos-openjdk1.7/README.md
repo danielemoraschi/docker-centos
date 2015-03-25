@@ -8,8 +8,8 @@ A base image for the OpenJDK 7 Runtime Environment based on Centos 7
 
 ## How to Build
 
-    git clone https://github.com/dmoraschi/docker-openjdk7.git
-    cd docker-openjdk7
+    git clone https://github.com/dmoraschi/docker-centos.git
+    cd centos-openjdk1.7
     docker build -t dmoraschi/centos-openjdk7 .
 
 ## License

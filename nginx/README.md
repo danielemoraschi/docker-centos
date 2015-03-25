@@ -12,8 +12,8 @@ Available volume:
 
 ## How to Build
 
-    git clone https://github.com/dmoraschi/docker-nginx.git
-    cd docker-nginx
+    git clone https://github.com/dmoraschi/docker-centos.git
+    cd nginx
     docker build -t dmoraschi/centos-nginx .
 
 ## How to Run (required a php fpm image to link)

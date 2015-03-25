@@ -30,18 +30,14 @@ Installed extensions:
 - php-php-gettext
 - apc
 
-Available volume:
-
-- /data
-
 ## How to Pull from Docker Hub
 
     docker pull dmoraschi/centos-php
 
 ## How to Build
 
-    git clone https://github.com/dmoraschi/docker-php.git
-    cd docker-php
+    git clone https://github.com/dmoraschi/docker-centos.git
+    cd php
     docker build -t dmoraschi/centos-php .
 
 ## How to Run

@@ -14,8 +14,8 @@ Available volumes:
 
 ## How to Build
 
-    git clone https://github.com/dmoraschi/docker-data.git
-    cd docker-data
+    git clone https://github.com/dmoraschi/docker-centos.git
+    cd app-volume
     docker build -t dmoraschi/app-volume .
 
 ## How to Run
