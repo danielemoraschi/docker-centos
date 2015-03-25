@@ -3,8 +3,10 @@ MAINTAINER Daniele Moraschi <daniele.moraschi@gmail.com>
 
 # PhalconPhp
 #
+ENV CPHALCON_VERSION master
+
 WORKDIR /tmp
-RUN git clone https://github.com/phalcon/cphalcon #-b 1.2.6
+RUN git clone https://github.com/phalcon/cphalcon -b ${CPHALCON_VERSION}
 WORKDIR cphalcon/build
 
 RUN ./install;
