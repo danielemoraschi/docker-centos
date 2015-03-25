@@ -60,19 +60,12 @@ RUN echo "error_reporting = E_ALL & ~E_DEPRECATED" >> /etc/php.ini
 RUN echo "date.timezone = 'UTC'" >> /etc/php.ini
 RUN echo "; [end]" >> /etc/php.ini
 
-RUN echo "error_log = /data/log/php-fpm/error.log" >> /etc/php-fpm.conf
-RUN echo "php_admin_value[error_log] = /data/log/php-fpm/www-error.log" >> /etc/php-fpm.d/www.conf
 
 # Volumes
 #
 RUN mkdir -p /data/app
 
-# Startup script
-#
-ADD ./scripts/phpfpm-start.sh /opt/bin/phpfpm-start.sh
-RUN chmod u=rwx /opt/bin/phpfpm-start.sh
-
-WORKDIR /data
+WORKDIR /data/app
 EXPOSE 9000
 
-ENTRYPOINT ["/opt/bin/phpfpm-start.sh"]
+CMD ["php-fpm", "-F"]

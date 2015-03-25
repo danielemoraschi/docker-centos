@@ -14,12 +14,12 @@ ADD ./conf/app.conf /etc/nginx/conf.d/app.conf
 
 # Startup script
 #
-ADD conf/nginx-start.sh /opt/bin/nginx-start.sh
+ADD ./scripts/nginx-start.sh /opt/bin/nginx-start.sh
 RUN chmod u=rwx /opt/bin/nginx-start.sh
 
 # Volumes
 #
-RUN mkdir -p /data
+RUN mkdir -p /data/app
 
 # PORTS
 #

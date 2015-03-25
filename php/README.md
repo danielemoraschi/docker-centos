@@ -52,8 +52,7 @@ Installed extensions:
     APP_WEB=<your app web port>
 
     docker run -tid --name ${APP_NAME}-app \
-        -v ${APP_ROOT}/app:/data/app \
-        -v ${APP_ROOT}/log:/data/log dmoraschi/app-volume
+        -v ${APP_ROOT}/app:/data/app dmoraschi/app-volume
 
     docker run --name ${APP_NAME}-php \
         --volumes-from ${APP_NAME}-app -d dmoraschi/centos-php

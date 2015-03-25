@@ -1,4 +1,4 @@
-FROM dmoraschi/php
+FROM dmoraschi/centos-php
 MAINTAINER Daniele Moraschi <daniele.moraschi@gmail.com>
 
 # Gearman
@@ -11,5 +11,5 @@ RUN yum -y install
 RUN pecl install gearman
 RUN echo extension=gearman.so > /etc/php.d/gearman.ini
 
-WORKDIR /data
-ENTRYPOINT ["/opt/bin/phpfpm-start.sh"]
+WORKDIR /data/app
+CMD ["php-fpm", "-F"]
