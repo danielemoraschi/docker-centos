@@ -1,4 +1,4 @@
-# A pure data volume container
+# Pure data volume container
 
 This image is meant to be used as "data-only" container,
 which will be used to give access to our app's files to the other linked containers.
