@@ -24,7 +24,7 @@ Available volumes:
     APP_ROOT=<your app root folder>
 
     docker run -tid --name ${APP_NAME}-app \
-        -v ${APP_ROOT}/app:/data/app -v ${APP_ROOT}/log:/data/log dmoraschi/app-volume
+        -v ${APP_ROOT}/app:/data/app dmoraschi/app-volume
 
 ## License
 
