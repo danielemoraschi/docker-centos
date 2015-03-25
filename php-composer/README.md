@@ -15,12 +15,12 @@ A Docker image for the Composer command line interface, based on `dmoraschi/cent
 ## How to Run (required a php fpm image to link)
 
     docker run -v /var/www/myapp/data:/data/app \
-        --rm dmoraschi/composer `your composer command here`
+        --rm dmoraschi/centos-phpcomposer `your composer command here`
 
 Example:
 
     docker run -v /var/www/myapp/data:/data/app \
-        --rm dmoraschi/composer create-project symfony/framework-standard-edition blog
+        --rm dmoraschi/centos-phpcomposer create-project symfony/framework-standard-edition blog
 
 
 ## How to Run along with `dmoraschi/app-volume` container
@@ -33,7 +33,7 @@ Example:
         -v ${APP_ROOT}/log:/data/log dmoraschi/app-volume
 
     docker run --volumes-from ${APP_NAME}-app \
-        --rm dmoraschi/composer create-project symfony/framework-standard-edition blog
+        --rm dmoraschi/centos-phpcomposer create-project symfony/framework-standard-edition blog
 
 
 ## License
