@@ -29,6 +29,12 @@ RUN yum -y install \
 	php-pecl-igbinary \
 	php-php-gettext
 
+
+# PECL
+#
+RUN pecl channel-update pecl.php.net
+
+
 # APC
 #
 RUN pecl install apc
@@ -38,6 +44,8 @@ RUN rm -f /etc/php.d/xcache.ini
 
 # CouchBase
 #
+ADD couchbase.repo /etc/yum.repos.d/couchbase.repo
+RUN yum install -y libcouchbase-devel
 RUN pecl install couchbase
 RUN echo "extension=couchbase.so" > /etc/php.d/50-couchbase.ini
 
