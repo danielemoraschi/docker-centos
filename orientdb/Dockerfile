@@ -24,5 +24,8 @@ RUN cd ${ROOT} \
 #
 RUN rm -rf ${ROOT}/${ORIENT_TAR} /tmp/* /var/tmp/*
 
-RUN sed -i 's/<users>/<users><user name="${ORIENTDB_USER}" password="${ORIENTDB_PASSWORD}" resources="*"\/>/g' /opt/orientdb/config/orientdb-server-config.xml
+EXPOSE 2424
+EXPOSE 2480
+
+RUN sed -i 's/<users>/<users><user name="admin" password="admin" resources="*"\/>/g' /opt/orientdb/config/orientdb-server-config.xml
 CMD ["/usr/local/bin/server.sh"]
