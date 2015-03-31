@@ -35,7 +35,11 @@ RUN pecl install apc
 RUN echo "extension=apc.so" > /etc/php.d/apc.ini
 RUN rm -f /etc/php.d/xcache.ini
 
-RUN yum clean all
+
+# CouchBase
+#
+RUN pecl install couchbase
+RUN echo "extension=couchbase.so" > /etc/php.d/50-couchbase.ini
 
 
 # PHP / FPM Configuration
