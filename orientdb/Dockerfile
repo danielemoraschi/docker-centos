@@ -10,6 +10,9 @@ ENV ORIENT_PACKAGE ${ORIENT_REPO_NAME}-${ORIENT_VERSION}
 ENV ORIENT_TAR ${ORIENT_PACKAGE}.tar.gz
 ENV ORIENT_URL http://www.orientechnologies.com/download.php?email=unknown@unknown.com&file=${ORIENT_TAR}&os=linux
 
+ENV ORIENTDB_USER admin
+ENV ORIENTDB_PASSWORD admin
+
 RUN cd ${ROOT} \
     && curl ${ORIENT_URL} > ${ORIENT_TAR}\
     && tar -xzf ${ORIENT_TAR} \
@@ -21,4 +24,5 @@ RUN cd ${ROOT} \
 #
 RUN rm -rf ${ROOT}/${ORIENT_TAR} /tmp/* /var/tmp/*
 
+RUN sed -i 's/<users>/<users><user name="${ORIENTDB_USER}" password="${ORIENTDB_PASSWORD}" resources="*"\/>/g' /opt/orientdb/config/orientdb-server-config.xml
 CMD ["/usr/local/bin/server.sh"]
