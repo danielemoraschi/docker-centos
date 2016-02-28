@@ -87,8 +87,15 @@ RUN echo "date.timezone = 'UTC'" >> /etc/php.ini
 RUN echo "; [end]" >> /etc/php.ini
 
 
+# Forward request and error logs to docker log collector
+#
+RUN ln -sf /dev/stderr /var/log/php-fpm/error.log
+
+
 # Volumes
 #
+VOLUME /var/log/php-fpm
+
 RUN mkdir -p /data/app/public
 WORKDIR /data/app
 EXPOSE 9000

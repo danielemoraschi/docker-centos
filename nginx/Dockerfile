@@ -13,8 +13,17 @@ ADD ./conf/default.conf /etc/nginx/conf.d/default.conf
 
 # PORTS
 #
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80 443
+
+# Forward request and error logs to docker log collector
+#
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
+
+# Volumes
+#
+VOLUME /var/log/nginx
+VOLUME /data/app/public
 
 RUN mkdir -p /data/app/public
 WORKDIR /data/app
