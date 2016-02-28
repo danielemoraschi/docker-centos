@@ -21,6 +21,6 @@ RUN chmod u=rwx /opt/bin/nginx-start.sh
 EXPOSE 80
 EXPOSE 443
 
-RUN mkdir -p /data/app
+RUN mkdir -p /data/app/public
 WORKDIR /data/app
 ENTRYPOINT ["/opt/bin/nginx-start.sh"]

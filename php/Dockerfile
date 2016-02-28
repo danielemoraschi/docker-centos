@@ -69,8 +69,7 @@ RUN echo "; [end]" >> /etc/php.ini
 
 # Volumes
 #
-RUN mkdir -p /data/app
-
+RUN mkdir -p /data/app/public
 WORKDIR /data/app
 EXPOSE 9000
 

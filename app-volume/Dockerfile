@@ -1,8 +1,7 @@
 FROM alpine
 MAINTAINER Daniele Moraschi <daniele.moraschi@gmail.com>
 
-RUN mkdir -p /data/app
+RUN mkdir -p /data/app/public
 RUN mkdir -p /data/log
-VOLUME ["/data/app"]
-VOLUME ["/data/log"]
+VOLUME ["/data"]
 CMD ["true"]
