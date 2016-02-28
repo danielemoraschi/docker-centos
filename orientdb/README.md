@@ -2,12 +2,12 @@
 
 ## How to Pull from Docker Hub
 
-    docker pull dmoraschi/docker-orientdb
+    docker pull dmoraschi/centos-orientdb
 
 ## How to Build
 
     git clone https://github.com/dmoraschi/docker-centos.git
-    cd orientdb
+    cd docker-centos/orientdb
     docker build -t dmoraschi/centos-orientdb .
 
 ## How to Run

@@ -2,10 +2,6 @@
 
 Nginx container based on Centos 7
 
-Available volume:
-
-- /data
-
 ## How to Pull from Docker Hub
 
     docker pull dmoraschi/centos-nginx
@@ -13,12 +9,12 @@ Available volume:
 ## How to Build
 
     git clone https://github.com/dmoraschi/docker-centos.git
-    cd nginx
+    cd docker-centos/nginx
     docker build -t dmoraschi/centos-nginx .
 
 ## How to Run (required a php fpm image to link)
 
-    docker run --name myapp-nginx -v /var/www/myapp/data:/data/app \
+    docker run --name myapp-nginx -v /var/www/myapp:/data/app \
         -p 80:80 --link php-fpm-image:fpm -d dmoraschi/centos-nginx
 
 ## How to Run along with `dmoraschi/app-volume` and `dmoraschi/centos-php` containers
@@ -28,7 +24,7 @@ Available volume:
     APP_WEB=<your app web port>
 
     docker run -tid --name ${APP_NAME}-app \
-        -v ${APP_ROOT}/app:/data/app dmoraschi/app-volume
+        -v ${APP_ROOT}:/data/app dmoraschi/app-volume
 
     docker run --name ${APP_NAME}-php \
         --volumes-from ${APP_NAME}-app -d dmoraschi/centos-php

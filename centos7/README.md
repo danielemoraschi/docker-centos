@@ -3,12 +3,8 @@
 A base image for the official CentOS distribution (`centos:7`) coming with:
 
 - EPEL repository
-- vim
-- git
-- gcc
-- make
-- curl
-- sudo
+- @base
+- "Development Tools"
 
 ## How to Pull from Docker Hub
 
@@ -17,7 +13,7 @@ A base image for the official CentOS distribution (`centos:7`) coming with:
 ## How to Build
 
     git clone https://github.com/dmoraschi/docker-centos.git
-    cd centos7
+    cd docker-centos/centos7
     docker build -t dmoraschi/centos7 .
 
 ## License

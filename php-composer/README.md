@@ -9,17 +9,17 @@ A Docker image for the Composer command line interface, based on `dmoraschi/cent
 ## How to Build
 
     git clone https://github.com/dmoraschi/docker-centos.git
-    cd php-composer
+    cd docker-centos/php-composer
     docker build -t dmoraschi/centos-phpcomposer .
 
 ## How to Run (required a php fpm image to link)
 
-    docker run -v /var/www/myapp/data:/data/app \
+    docker run -v /var/www/myapp:/data/app \
         --rm dmoraschi/centos-phpcomposer `your composer command here`
 
 Example:
 
-    docker run -v /var/www/myapp/data:/data/app \
+    docker run -v /var/www/myapp:/data/app \
         --rm dmoraschi/centos-phpcomposer create-project symfony/framework-standard-edition
 
 
@@ -29,7 +29,7 @@ Example:
     APP_ROOT=<your app root folder>
 
     docker run -tid --name ${APP_NAME}-app \
-        -v ${APP_ROOT}/app:/data/app dmoraschi/app-volume
+        -v ${APP_ROOT}:/data/app dmoraschi/app-volume
 
     docker run --volumes-from ${APP_NAME}-app \
         --rm dmoraschi/centos-phpcomposer create-project symfony/framework-standard-edition

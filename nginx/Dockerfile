@@ -9,22 +9,18 @@ RUN yum clean all
 # Configuration
 #
 ADD ./conf/nginx.conf /etc/nginx/nginx.conf
-RUN rm -f /etc/nginx/conf.d/default.conf
-ADD ./conf/app.conf /etc/nginx/conf.d/app.conf
+ADD ./conf/app.conf /etc/nginx/conf.d/default.conf
 
 # Startup script
 #
 ADD ./scripts/nginx-start.sh /opt/bin/nginx-start.sh
 RUN chmod u=rwx /opt/bin/nginx-start.sh
 
-# Volumes
-#
-RUN mkdir -p /data/app
-
 # PORTS
 #
 EXPOSE 80
 EXPOSE 443
 
-WORKDIR /opt/bin
+RUN mkdir -p /data/app
+WORKDIR /data/app
 ENTRYPOINT ["/opt/bin/nginx-start.sh"]

@@ -37,13 +37,13 @@ Installed extensions:
 ## How to Build
 
     git clone https://github.com/dmoraschi/docker-centos.git
-    cd php
+    cd docker-centos/php
     docker build -t dmoraschi/centos-php .
 
 ## How to Run
 
     docker run --name myapp-php \
-            --volumes-from myapp-app -d dmoraschi/centos-php
+            -v /var/www/myapp:/data/app -d dmoraschi/centos-php
 
 ## How to Run along with `dmoraschi/app-volume` and `dmoraschi/centos-nginx` containers
 
@@ -52,7 +52,7 @@ Installed extensions:
     APP_WEB=<your app web port>
 
     docker run -tid --name ${APP_NAME}-app \
-        -v ${APP_ROOT}/app:/data/app dmoraschi/app-volume
+        -v ${APP_ROOT}:/data/app dmoraschi/app-volume
 
     docker run --name ${APP_NAME}-php \
         --volumes-from ${APP_NAME}-app -d dmoraschi/centos-php
