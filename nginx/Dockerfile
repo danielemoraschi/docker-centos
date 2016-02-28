@@ -9,7 +9,7 @@ RUN yum clean all
 # Configuration
 #
 ADD ./conf/nginx.conf /etc/nginx/nginx.conf
-ADD ./conf/app.conf /etc/nginx/conf.d/default.conf
+ADD ./conf/default.conf /etc/nginx/conf.d/default.conf
 
 # PORTS
 #

@@ -5,62 +5,37 @@ MAINTAINER Daniele Moraschi <daniele.moraschi@gmail.com>
 #
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 RUN yum -y install \
-	php \
-	php-cli \
-	php-common \
-	php-devel \
-	php-dom \
-	php-fpm \
-	php-gd \
-	php-gettext \
-	php-imap \
-	php-ldap \
-	php-mbstring \
-	php-mcrypt \
-	php-mysql \
-	php-pdo \
-	php-pear \
-	php-pecl-igbinary \
-	php-pecl-imagick \
-	php-pecl-memcache \
-	php-pecl-memcached \
-	php-pecl-mongo \
-	php-pecl-ssh2 \
-	php-opcache \
-	php-process \
-	php-redis \
-	php-soap \
-	php-xml \
-	php-xmlrpc
+	php56w \
+	php56w-cli \
+	php56w-common \
+	php56w-devel \
+	php56w-fpm \
+	php56w-gd \
+	php56w-imap \
+	php56w-intl \
+	php56w-ldap \
+	php56w-mbstring \
+	php56w-mcrypt \
+	php56w-mysqlnd \
+	php56w-odbc \
+	php56w-opcache \
+	php56w-pdo \
+	php56w-pear \
+	php56w-pecl-apcu \
+	php56w-pecl-igbinary \
+	php56w-pecl-imagick \
+	php56w-pecl-memcache \
+	php56w-pecl-memcached \
+	php56w-pecl-redis \
+	php56w-pecl-xdebug \
+	php56w-opcache \
+	php56w-process \
+	php56w-soap \
+	php56w-xml \
+	php56w-xmlrpc \
+	php-php-gettext
+	#	php56w-pecl-gearman
 
-#php56w
-#php56w-cli
-#php56w-common
-#php56w-devel
-#php56w-fpm
-#php56w-gd
-#php56w-imap
-#php56w-intl
-#php56w-ldap
-#php56w-mbstring
-#php56w-mcrypt
-#php56w-mysqlnd
-#php56w-odbc
-#php56w-opcache
-#php56w-pdo
-#php56w-pear
-#php56w-pecl-apcu
-#php56w-pecl-gearman
-#php56w-pecl-igbinary
-#php56w-pecl-imagick
-#php56w-pecl-memcache
-#php56w-pecl-memcached
-#php56w-pecl-redis
-#php56w-pecl-xdebug
-#php56w-process
-#php56w-soap
-#php56w-xml
-#php56w-xmlrpc
 
 # PHPUnit
 #
@@ -73,7 +48,6 @@ RUN mv phpunit.phar /bin/phpunit
 #
 RUN pear config-set auto_discover 1
 RUN pear channel-update pecl.php.net
-RUN pear upgrade
 
 
 # APC
@@ -81,6 +55,13 @@ RUN pear upgrade
 RUN pecl install apc
 RUN echo "extension=apc.so" > /etc/php.d/apc.ini
 RUN rm -f /etc/php.d/xcache.ini
+
+
+# MondoDB
+#
+RUN yum install -y openssl-devel
+RUN pecl install mongodb
+RUN echo "extension=mongodb.so" > /etc/php.d/apc.ini
 
 
 # PHP / FPM Configuration
