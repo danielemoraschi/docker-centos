@@ -4,7 +4,7 @@ MAINTAINER Daniele Moraschi <daniele.moraschi@gmail.com>
 # Install PHP and extensions
 #
 RUN yum -y install \
-	php
+	php \
 	php-common \
 	php-cli \
 	php-devel \
