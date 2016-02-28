@@ -12,7 +12,7 @@ RUN yum -y install \
 	php-fpm \
 	php-gd \
 	php-ldap \
-	php-mcrypt \ 
+	php-mcrypt \
 	php-mysql \
 	php-opcache \
 	php-redis \
@@ -32,7 +32,9 @@ RUN yum -y install \
 
 # PECL
 #
-RUN pecl channel-update pecl.php.net
+RUN pear config-set auto_discover 1
+RUN pear channel-update pecl.php.net
+RUN pear upgrade
 
 
 # APC
@@ -40,14 +42,6 @@ RUN pecl channel-update pecl.php.net
 RUN pecl install apc
 RUN echo "extension=apc.so" > /etc/php.d/apc.ini
 RUN rm -f /etc/php.d/xcache.ini
-
-
-# CouchBase
-#
-ADD couchbase.repo /etc/yum.repos.d/couchbase.repo
-RUN yum install -y libcouchbase-devel
-RUN pecl install couchbase
-RUN echo "extension=couchbase.so" > /etc/php.d/50-couchbase.ini
 
 
 # PHP / FPM Configuration

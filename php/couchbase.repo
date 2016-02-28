@@ -1,6 +1,0 @@
-[couchbase]
-enabled = 1
-name = Couchbase package repository
-baseurl = http://packages.couchbase.com/rpm/7/x86_64
-gpgcheck = 1
-gpgkey = http://packages.couchbase.com/rpm/couchbase-rpm.key
