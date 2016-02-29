@@ -16,14 +16,14 @@ RUN yum -y install \
 	php-mysql \
 	php-opcache \
 	php-redis \
-	php-soap \
-	php-xml \
+#	php-soap \
+#	php-xml \
 #	php-xmlrpc \
 	php-pear \
 	php-pdo \
 	php-pear \
 #	php-phpunit \
-	php-pecl-mongo \
+#	php-pecl-mongo \
 #	php-pecl-memcache \
 	php-pecl-memcached \
 #	php-pecl-igbinary \
