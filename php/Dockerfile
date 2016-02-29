@@ -11,8 +11,8 @@ RUN yum -y install \
 	php-dom \
 	php-fpm \
 	php-gd \
-	php-ldap \
-	php-mcrypt \
+#	php-ldap \
+#	php-mcrypt \
 	php-mysql \
 	php-opcache \
 	php-redis \
