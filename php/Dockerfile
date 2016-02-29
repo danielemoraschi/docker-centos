@@ -12,7 +12,7 @@ RUN yum -y install \
 	php-fpm \
 	php-gd \
 	php-ldap \
-	php-mcrypt \
+#	php-mcrypt \
 	php-mysql \
 	php-opcache \
 	php-redis \
@@ -27,8 +27,7 @@ RUN yum -y install \
 	php-pecl-memcache \
 	php-pecl-memcached \
 	php-pecl-igbinary \
-	php-php-gettext \
-	--skip-broken
+	php-php-gettext
 
 
 # PECL
