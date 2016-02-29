@@ -4,30 +4,30 @@ MAINTAINER Daniele Moraschi <daniele.moraschi@gmail.com>
 # Install PHP and extensions
 #
 RUN yum -y install \
-	php \
-	php-common \
-	php-cli \
-	php-devel \
-	php-dom \
-	php-fpm \
-	php-gd \
+	php 
+#	php-common \
+#	php-cli \
+#	php-devel \
+#	php-dom \
+#	php-fpm \
+#	php-gd \
 #	php-ldap \
 #	php-mcrypt \
-	php-mysql \
-	php-opcache \
-	php-redis \
+#	php-mysql \
+#	php-opcache \
+#	php-redis \
 #	php-soap \
 #	php-xml \
 #	php-xmlrpc \
-	php-pear \
-	php-pdo \
-	php-pear \
+#	php-pear \
+#	php-pdo \
+#	php-pear \
 #	php-phpunit \
 #	php-pecl-mongo \
 #	php-pecl-memcache \
-	php-pecl-memcached \
+#	php-pecl-memcached \
 #	php-pecl-igbinary \
-	php-php-gettext
+#	php-php-gettext
 
 
 # PECL
