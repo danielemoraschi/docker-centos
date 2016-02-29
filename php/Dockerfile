@@ -12,7 +12,7 @@ RUN yum -y install \
 	php-fpm \
 	php-gd \
 	php-ldap \
-#	php-mcrypt \
+	php-mcrypt \
 	php-mysql \
 	php-opcache \
 	php-redis \
@@ -22,7 +22,7 @@ RUN yum -y install \
 	php-pear \
 	php-pdo \
 	php-pear \
-#	php-phpunit \
+	php-phpunit \
 	php-pecl-mongo \
 	php-pecl-memcache \
 	php-pecl-memcached \
