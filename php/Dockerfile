@@ -22,12 +22,13 @@ RUN yum -y install \
 	php-pear \
 	php-pdo \
 	php-pear \
-	php-phpunit \
+#	php-phpunit \
 	php-pecl-mongo \
 	php-pecl-memcache \
 	php-pecl-memcached \
 	php-pecl-igbinary \
-	php-php-gettext
+	php-php-gettext \
+	--skip-broken
 
 
 # PECL
