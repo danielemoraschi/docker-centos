@@ -18,15 +18,15 @@ RUN yum -y install \
 	php-redis \
 	php-soap \
 	php-xml \
-	php-xmlrpc \
+#	php-xmlrpc \
 	php-pear \
 	php-pdo \
 	php-pear \
-	php-phpunit \
+#	php-phpunit \
 	php-pecl-mongo \
-	php-pecl-memcache \
+#	php-pecl-memcache \
 	php-pecl-memcached \
-	php-pecl-igbinary \
+#	php-pecl-igbinary \
 	php-php-gettext
 
 
