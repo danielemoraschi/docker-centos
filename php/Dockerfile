@@ -3,31 +3,42 @@ MAINTAINER Daniele Moraschi <daniele.moraschi@gmail.com>
 
 # Install PHP and extensions
 #
+RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 RUN yum -y install \
 	php \
-	php-common \
 	php-cli \
+	php-common \
 	php-devel \
 	php-dom \
 	php-fpm \
 	php-gd \
+	php-gettext \
+	php-imap \
 	php-ldap \
+	php-mbstring \
 	php-mcrypt \
 	php-mysql \
+	php-pdo \
+	php-pear \
+	php-pecl-igbinary \
+	php-pecl-imagick \
+	php-pecl-memcache \
+	php-pecl-memcached \
+	php-pecl-mongo \
+	php-pecl-ssh2 \
 	php-opcache \
+	php-process \
 	php-redis \
 	php-soap \
 	php-xml \
-	php-xmlrpc \
-	php-pear \
-	php-pdo \
-	php-pear \
-#	php-phpunit \
-	php-pecl-mongo \
-	php-pecl-memcache \
-	php-pecl-memcached \
-	php-pecl-igbinary \
-	php-php-gettext
+	php-xmlrpc
+
+
+# PHPUnit
+#
+RUN curl -L -O  https://phar.phpunit.de/phpunit.phar
+RUN chmod +x phpunit.phar
+RUN mv phpunit.phar /bin/phpunit
 
 
 # PECL
