@@ -69,6 +69,7 @@ RUN echo "extension=mongodb.so" > /etc/php.d/apc.ini
 RUN sed -i '/^listen/clisten = 0.0.0.0:9000' /etc/php-fpm.d/www.conf
 RUN sed -i 's/^listen.allowed_clients/;listen.allowed_clients/' /etc/php-fpm.d/www.conf
 RUN sed -i '/^;env\[TEMP\] = .*/aenv[DB_PORT_3306_TCP_ADDR] = $DB_PORT_3306_TCP_ADDR' /etc/php-fpm.d/www.conf
+RUN sed -i 's/;request_slowlog_timeout = 0/request_slowlog_timeout = 10s/' /etc/php-fpm.d/www.conf
 
 RUN sed -i "s/error_reporting/;error_reporting/g" /etc/php.ini
 RUN sed -i "s/display_errors = Off/display_errors = stderr/g" /etc/php.ini
@@ -89,12 +90,14 @@ RUN echo "; [end]" >> /etc/php.ini
 
 # Forward request and error logs to docker log collector
 #
+RUN ln -sf /dev/stdout /var/log/php-fpm/slow.log
 RUN ln -sf /dev/stderr /var/log/php-fpm/error.log
 
 
 # Volumes
 #
 VOLUME /var/log/php-fpm
+VOLUME /data/app/public
 
 RUN mkdir -p /data/app/public
 WORKDIR /data/app
