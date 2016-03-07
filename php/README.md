@@ -4,31 +4,43 @@ Php FPM container based on Centos 7
 
 Installed extensions:
 
-- php
-- php-common
-- php-cli
-- php-devel
-- php-dom
-- php-fpm
-- php-gd
-- php-ldap
-- php-mcrypt
-- php-mysql
-- php-opcache
-- php-redis
-- php-soap
-- php-xml
-- php-xmlrpc
-- php-pear
-- php-pdo
-- php-pear
-- php-phpunit
-- php-pecl-mongo
-- php-pecl-memcache
-- php-pecl-memcached
-- php-pecl-igbinary
+- php56w
+- php56w-cli
+- php56w-common
+- php56w-devel
+- php56w-fpm
+- php56w-gd
+- php56w-imap
+- php56w-intl
+- php56w-ldap
+- php56w-mbstring
+- php56w-mcrypt
+- php56w-mysqlnd
+- php56w-odbc
+- php56w-opcache
+- php56w-pdo
+- php56w-pear
+- php56w-pecl-apcu
+- php56w-pecl-igbinary
+- php56w-pecl-imagick
+- php56w-pecl-memcache
+- php56w-pecl-memcached
+- php56w-pecl-redis
+- php56w-pecl-xdebug
+- hp56w-opcache
+- php56w-process
+- php56w-soap
+- php56w-xml
+- php56w-xmlrpc
 - php-php-gettext
+
+
+Other Extensions:
+
+- PHPUnit
 - apc
+- Mongodb
+- Composer
 
 ## How to Pull from Docker Hub
 
@@ -64,3 +76,4 @@ Installed extensions:
 ## License
 
 MIT
+-

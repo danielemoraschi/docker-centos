@@ -34,7 +34,7 @@ RUN yum -y install \
 	php56w-xml \
 	php56w-xmlrpc \
 	php-php-gettext
-	#	php56w-pecl-gearman
+	# php56w-pecl-gearman
 
 
 # PHPUnit
@@ -57,11 +57,18 @@ RUN echo "extension=apc.so" > /etc/php.d/apc.ini
 RUN rm -f /etc/php.d/xcache.ini
 
 
-# MondoDB
+# MongoDB
 #
 RUN yum install -y openssl-devel
 RUN pecl install mongodb
-RUN echo "extension=mongodb.so" > /etc/php.d/apc.ini
+RUN echo "extension=mongodb.so" > /etc/php.d/mongodb.ini
+
+
+# Composer
+#
+WORKDIR /tmp
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
 
 
 # PHP / FPM Configuration
