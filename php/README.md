@@ -33,6 +33,7 @@ Installed extensions:
 - php56w-xml
 - php56w-xmlrpc
 - php-php-gettext
+- php56w-pecl-gearman
 
 
 Other Extensions:

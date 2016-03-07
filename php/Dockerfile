@@ -33,8 +33,8 @@ RUN yum -y install \
 	php56w-soap \
 	php56w-xml \
 	php56w-xmlrpc \
-	php-php-gettext
-	# php56w-pecl-gearman
+	php-php-gettext \
+	php56w-pecl-gearman
 
 
 # PHPUnit
@@ -48,13 +48,6 @@ RUN mv phpunit.phar /bin/phpunit
 #
 RUN pear config-set auto_discover 1
 RUN pear channel-update pecl.php.net
-
-
-# APC
-#
-RUN pecl install apc
-RUN echo "extension=apc.so" > /etc/php.d/apc.ini
-RUN rm -f /etc/php.d/xcache.ini
 
 
 # MongoDB
@@ -104,10 +97,9 @@ RUN ln -sf /dev/stderr /var/log/php-fpm/error.log
 # Volumes
 #
 VOLUME /var/log/php-fpm
-VOLUME /data/app/public
+VOLUME /data
 
-RUN mkdir -p /data/app/public
-WORKDIR /data/app
+WORKDIR /data
 EXPOSE 9000
 
 CMD ["php-fpm", "-F"]

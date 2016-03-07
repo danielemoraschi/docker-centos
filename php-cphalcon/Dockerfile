@@ -15,5 +15,5 @@ RUN rm -rf cphalcon
 RUN echo extension=phalcon.so > /etc/php.d/phalcon.ini
 
 
-WORKDIR /data/app
+WORKDIR /data
 CMD ["php-fpm", "-F"]

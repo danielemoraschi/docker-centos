@@ -23,8 +23,7 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 # Volumes
 #
 VOLUME /var/log/nginx
-VOLUME /data/app/public
+VOLUME /data
 
-RUN mkdir -p /data/app/public
-WORKDIR /data/app
+WORKDIR /data
 CMD ["nginx"]
